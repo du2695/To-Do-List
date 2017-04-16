@@ -1,0 +1,23 @@
+<h1>作業更新</h1>
+
+<%= form_for @list do |f| %>
+<p>
+    <%= f.label :name , "項目名" %>
+    <%= f.text_field :name %>
+</p>
+
+<p>
+    <%= f.label :user ,"担当者" %>
+    <%= f.text_field :user %>
+</p> 
+
+<p>
+    <%= f.label :expire_date ,"期限" %>
+    <%= f.date_field :expire_date %>
+</p> 
+
+<p>
+    <%= f.submit "更新",data: {disable_with: "更新中..."} %> 
+    <%= link_to "キャンセル",lists_path %>
+</p>
+<% end %>

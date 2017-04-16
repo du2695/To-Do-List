@@ -1,0 +1,27 @@
+<h1>ToDo List</h1>
+
+<p><%= link_to "作業登録",new_list_path %></p>
+<p style="margin-bottom: 2em;"> 
+    <table border=3 cellpadding=5 width=500>
+        <tr>
+            <th>項目名</th>
+            <th>担当者</th>
+            <th>期限</th>
+            <th>操作</th>
+        </tr>
+
+        <% @list.each do |list| %>
+        <tr>
+    
+            <td><%= list.name %></td>
+            <td><%= list.user %></td>
+            <td align=center><%= list.expire_date %></td>
+            <td align=center>
+                <%= link_to "更新",edit_list_path(list) %>
+                <%= link_to "削除",list_path(list),method: :delete %>
+            </td>
+        </tr>
+        <% end %>
+    </table> 
+</p>
+    
